@@ -46,7 +46,7 @@ if(NOT USE_SYSTEM_CURL OR NOT CURL_FOUND)
     FetchContent_Declare(
             curllib
             GIT_REPOSITORY  https://github.com/curl/curl.git
-            GIT_TAG         curl-7_65_3
+            GIT_TAG         curl-7_66_0
             GIT_SHALLOW     TRUE
             GIT_PROGRESS    TRUE
             )
