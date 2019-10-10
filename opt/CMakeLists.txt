@@ -57,7 +57,7 @@ if(NOT USE_SYSTEM_CURL OR NOT CURL_FOUND)
 
         set(HTTP_ONLY ON CACHE BOOL "Only build HTTP parts of curl." FORCE)
 
-        add_subdirectory(${curllib_SOURCE_DIR} ${curllib_BINARY_DIR})
+        add_subdirectory(${curllib_SOURCE_DIR} ${curllib_BINARY_DIR} EXCLUDE_FROM_ALL)
         set(CURL_FOUND TRUE)
         set(CURL_LIBRARIES libcurl)
         set(CURL_INCLUDE_DIRS
