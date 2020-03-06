@@ -82,6 +82,15 @@ Session::Impl::Impl() {
 #endif
 #endif
 #endif
+
+#if LIBCURL_VERSION_MAJOR >= 7
+#if LIBCURL_VERSION_MINOR >= 21
+#if LIBCURL_VERSION_PATCH >= 6
+		/* enable all supported built-in compressions */
+		curl_easy_setopt(curl, CURLOPT_ACCEPT_ENCODING, "");
+#endif
+#endif
+#endif
     }
 }
 
