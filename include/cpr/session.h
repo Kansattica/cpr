@@ -2,6 +2,7 @@
 #define CPR_SESSION_H
 
 #include <cstdint>
+#include <fstream>
 #include <memory>
 
 #include "cpr/auth.h"
@@ -24,6 +25,7 @@
 #include "cpr/user_agent.h"
 #include "cpr/session.h"
 #include "cpr/verbose.h"
+#include "cpr/limit_rate.h"
 
 namespace cpr {
 
@@ -67,6 +69,7 @@ class Session {
     void SetOption(const UserAgent& ua);
     void SetOption(Payload&& payload);
     void SetOption(const Payload& payload);
+    void SetOption(const LimitRate& limit_rate);
     void SetOption(Proxies&& proxies);
     void SetOption(const Proxies& proxies);
     void SetOption(Multipart&& multipart);
@@ -81,6 +84,7 @@ class Session {
     void SetOption(const Verbose& verbose);
 
     Response Delete();
+    Response Download(std::ofstream& file);
     Response Get();
     Response Head();
     Response Options();
