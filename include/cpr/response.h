@@ -23,8 +23,8 @@ class Response {
              TextType&& p_status_line = "", TextType&& p_reason = "")
             : status_code{p_status_code}, text{CPR_FWD(p_text)}, header{CPR_FWD(p_header)},
               url{CPR_FWD(p_url)}, elapsed{p_elapsed}, cookies{CPR_FWD(p_cookies)},
-              error{CPR_FWD(p_error)}, raw_header{CPR_FWD(p_raw_header)}, reason{CPR_FWD(p_reason)},
-              status_line{CPR_FWD(p_status_line)} {}
+              error{CPR_FWD(p_error)}, raw_header{CPR_FWD(p_raw_header)}, status_line{CPR_FWD(p_status_line)},
+			  reason{CPR_FWD(p_reason)} {}
 
     std::int32_t status_code;
     std::string text;
